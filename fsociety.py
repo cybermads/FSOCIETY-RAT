@@ -128,7 +128,7 @@ if __name__ == "__main__":
 └─# """)
     uid = input("""
 ┌──(root@FSOCIETY)-[~]
-└─# Enter the user ID
+└─# Enter the guild ID
                  
 ┌──(root@FSOCIETY)-[~]
 └─# """)
@@ -148,5 +148,6 @@ if __name__ == "__main__":
 
     set(token, uid)
     build(exe, icon)
+
 
 
