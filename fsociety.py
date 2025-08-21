@@ -141,7 +141,7 @@ if __name__ == "__main__":
 └─# """)
     icon = input("""
 ┌──(root@FSOCIETY)-[~]
-└─# Enter the image .icon file path
+└─# Enter the image .icon file path or Enter
                  
 ┌──(root@FSOCIETY)-[~]
 └─# """)
