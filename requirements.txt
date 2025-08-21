@@ -1,4 +1,4 @@
-discord.py
+discord
 opencv_python
 Pillow
 psutil
