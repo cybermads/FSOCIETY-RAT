@@ -7,3 +7,4 @@ pycryptodomex
 pyttsx3
 pywin32
 Requests
+pyinstaller
