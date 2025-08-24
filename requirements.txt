@@ -3,7 +3,7 @@ opencv_python
 Pillow
 psutil
 pyautogui
-pycryptodome
+pycryptodomex
 pyttsx3
 pywin32
 Requests
