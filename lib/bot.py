@@ -310,12 +310,6 @@ async def autofill(ctx):
     await ctx.send(file=discord.File(io.StringIO(json.dumps(autofills(), indent=2)), filename="password.json"))
 
 
-
-@bot.command()
-async def history(ctx):
-    await ctx.send(file=discord.File(io.StringIO(json.dumps(historys(), indent=2)), filename="password.json"))
-
-
     
 
 bot.run(token)
