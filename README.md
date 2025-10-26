@@ -1,6 +1,6 @@
 # FSOCIETY RAT V2 🎩
 **FSOCIETY RAT is a Discord-based Remote Administration Tool (RAT)**
-- **version 1.0 ✅**
+- **version 2.0 ✅**
 <img width="1223" height="838" alt="image" src="https://github.com/user-attachments/assets/e4f75acf-d732-4e40-bb5c-99d7255010df" />
 <img width="1073" height="721" alt="image" src="https://github.com/user-attachments/assets/03982e49-9920-43c3-a91e-e584ec49d684" />
 
