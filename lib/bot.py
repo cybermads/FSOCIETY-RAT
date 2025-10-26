@@ -150,7 +150,6 @@ Troll Access:
 Device Access:
 
 !screenshot            : Take a screenshot
-!record                : Record pc screen 30 sec
 !webcam                : Capture webcam image
 
 Credential Dump:
