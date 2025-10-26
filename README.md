@@ -11,38 +11,43 @@
 
 # FSOCIETY RAT - Helps 🎩 
 ```
-FSOCIETY RAT commands line:
+FSOCIETY RAT V2 commands line:
 
 System Access:
 
 !startup               : Add autostart
 !execute <commands>    : Run shell command
 !cd <directory>        : Change directory
-!sysinfo               : Get system info
-!open <link>           : Open a web browser
-!bsod                  : Trigger bluescreen
-!shutdown              : Shutdown the system
-!restart               : Restart the system
-!msgbox <title> <text> : Show message box
-!textspech <text>      : text to speech
-!wallpaper             : set wallpaper attach image
-!ip                    : Get Public IP
-!download <path>       : Download file 
-!upload                : Upload file
 !process               : List running processes
 !processkill <pid>     : Kill a process by PID
+!shutdown              : Shutdown the system
+!restart               : Restart the system
+!keylog                : Start Keylogger (NEW!)
+!stoplog               : Stop Keylogger  (NEW!)
+
+System Information:
+!ip                    : Get public IP info
+!sysinfo               : Get system info
+
+Troll Access:
+
+!open <link>           : Open a web browser
+!bsod                  : Trigger bluescreen
+!msgbox <title> <text> : Show message box
+!textspech <text>      : text to speech
+!wallpaper             : Set wallpaper attach image
 !forkbomb              : Rabbit Virus
 
 Device Access:
 
 !screenshot            : Take a screenshot
+!record                : Record pc screen 30 sec
 !webcam                : Capture webcam image
 
 Credential Dump:
 
 !password              : Dump saved passwords
 !autofill              : Dump saved autofill data
-!history               : Dump browser history
 ```
 
 # Disclaimer 🚫 
